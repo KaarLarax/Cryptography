@@ -4,3 +4,15 @@
 *.pdf
 # vs code settings
 .vscode/
+
+#python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+#jetbrains
+.idea/
+#macos.DS_Store
+.DS_Store
+#logs
+logs/
