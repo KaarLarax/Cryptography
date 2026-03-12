@@ -1,0 +1,89 @@
+Ejecutando el Código
+
+Primero debe ejecutar cd en la carpeta DES.
+
+Para ejecutar el código, ejecute 1o. el archivo server.py:
+
+>> python server_e.py
+
+El código declara la IP y el puerto del host con las siguientes dos líneas:
+
+    host = "127.0.0.1" port = 5000
+
+Estos valores se pueden cambiar a cualquier valor.
+
+NOTA: Deben coincidir en server_e.py y client_e.py.
+
+El código mostrará lo siguiente en la terminal hasta que un usuario se conecte:
+
+    "Esperando conexión..."
+
+Ahora, ejecute el archivo client_e.py:
+
+    python client_e.py
+
+Esto mostrará lo siguiente en la terminal de client_e.py:
+
+    >>Ingrese el mensaje que desea cifrar ->
+
+La terminal de server_e.py mostrará lo siguiente:
+
+    >> Conexión desde: ('127.0.0.1', 54008)
+
+La IP y la dirección variarán según el usuario. Uso del servidor y DES
+
+Ahora que ha configurado el servidor y el cliente, puede empezar a cifrar mensajes y a enviarlos.
+
+En la terminal del cliente, tal como se le solicite, puede introducir el mensaje 
+que desea enviar al servidor. 
+Introdúzcalo y pulse Intro. 
+La terminal mostrará el mensaje cifrado en binario y lo enviará al servidor.
+
+En la terminal del servidor, verá el mensaje entrante cifrado, así como el 
+mensaje descifrado. También puede enviar un mensaje de vuelta y cifrarlo. 
+Introdúzcalo y pulse Intro. 
+La terminal mostrará el mensaje cifrado en binario y lo enviará al cliente.
+
+Esta comunicación continua puede continuar indefinidamente, lo que permite 
+la comunicación cifrada entre el usuario cliente y el usuario servidor.
+
+Cómo funciona el código
+
+Los archivos server_e.py y client_e.py realizan llamadas a la 
+clase DES importada en des_e.py. 
+Antes de enviar los mensajes a través de la conexión TCP, se 
+realizan los siguientes pasos para cifrarlos:
+
+El mensaje (ASCII) se convierte a binario.
+El binario se convierte en bloques de 8 bits.
+Cada fragmento de 8 bits se cifra mediante la clase DES.
+Cada fragmento cifrado de 8 bits se concatena en un mensaje largo.
+
+Este mensaje se envía al otro usuario. 
+
+Para descifrar el mensaje, se realizan los siguientes pasos:
+
+El mensaje (binario) se convierte en fragmentos de 8 bits.
+Cada fragmento se descifra mediante la clase DES.
+Cada fragmento descifrado de 8 bits se concatena en un mensaje largo.
+Este mensaje largo (aún binario) se convierte a ASCII.
+
+Cómo funciona el cifrado toy_DES
+
+El algoritmo utiliza un cifrado Feistel de DOS rondas. 
+Cada ronda utiliza DOS cajas S que reciben una entrada 
+de 4 bits y generan una salida de 2 bits. 
+Se proporciona una clave maestra de 10 bits que genera 
+una clave de 8 bits en cada una de sus dos rondas.
+
+El descifrado utiliza la misma implementación algorítmica que 
+el cifrado y simplemente intercambia el orden de las claves 
+para descifrar el mensaje.
+
+Referencias
+
+Para saber la fuente de la prgroamación de Cx Server-Cliente con sockets
+https://shakeelosmani.wordpress.com/2015/04/13/python-3-socket-programming-example/
+
+fuente de conversión binario <---->ascii  en python
+https://stackoverflow.com/questions/7396849/convert-binary-to-ascii-and-vice-versa
