@@ -1,0 +1,6 @@
+# ignore DOCX files
+*.docx
+# ignore PDF files
+*.pdf
+# vs code settings
+.vscode/
