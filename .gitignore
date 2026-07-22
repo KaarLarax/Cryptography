@@ -2,6 +2,8 @@
 *.docx
 # ignore PDF files
 *.pdf
+!homeworks/*.pdf
+!homeworks/**/*.pdf
 # vs code settings
 .vscode/
 
