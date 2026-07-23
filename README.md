@@ -40,7 +40,7 @@ Los reportes de `homeworks/` se usaron como fuente para documentar el motivo de 
 - [TAR-07](practices/tar-07/README.md)
 - [TAR-08](practices/tar-08/README.md)
 - [TAR-09](practices/tar-09/README.md)
-- [Proyecto final](final%20project/README.md)
+- [Proyecto final](final%20project/)
 
 ## Reportes PDF
 
