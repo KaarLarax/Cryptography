@@ -1,3 +1,4 @@
 [submodule "final project"]
 	path = final project
 	url = https://github.com/KaarLarax/smart-home-cripto.git
+	branch = main
